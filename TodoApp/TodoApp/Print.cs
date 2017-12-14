@@ -22,6 +22,7 @@ namespace TodoApp
             }
             else
             {
+                Console.WriteLine("\n \n");
                 while ((line1 = sr.ReadLine()) != null)
                 {
                     Console.WriteLine(counter + "  " + line1);
