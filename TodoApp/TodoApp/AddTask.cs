@@ -13,7 +13,7 @@ namespace TodoApp
         public void AddNewTask(string task)
         {
             var sw = new StreamWriter(path, true);
-            sw.WriteLine("[]"+task);
+            sw.WriteLine("[]" + task);
 
             sw.Close();
         }

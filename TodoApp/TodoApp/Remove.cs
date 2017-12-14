@@ -13,12 +13,12 @@ namespace TodoApp
         public void RemoveTask(int task)
         {
             string[] lines = File.ReadAllLines(path);
-            var  sw = new StreamWriter(path);
+            var sw = new StreamWriter(path);
             for (int i = 0; i < task - 1; i++)
             {
                 sw.WriteLine(lines[i]);
             }
-            for (int i = task ; i < lines.Length; i++)
+            for (int i = task; i < lines.Length; i++)
             {
                 sw.WriteLine(lines[i]);
             }

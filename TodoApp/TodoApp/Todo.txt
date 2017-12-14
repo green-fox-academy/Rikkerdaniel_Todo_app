@@ -1,2 +1,1 @@
-[X]jgfjhf
-[]hhhhh
+[X]My super todo app works kinda okay

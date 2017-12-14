@@ -14,16 +14,16 @@ namespace TodoApp
         public void PrinterAll()
         {
             var sr = new StreamReader(path);
-            var srtest = new StreamReader(path); 
+            var srtest = new StreamReader(path);
             string line1 = "";
             int counter = 1;
-            if ( srtest.ReadLine ()== null)
+            if (srtest.ReadLine() == null)
             {
                 Console.WriteLine("\n YOUR LIST IS EMPTY !!  \n");
             }
             else
             {
-                
+
                 Console.WriteLine("\n \n");
                 while ((line1 = sr.ReadLine()) != null)
                 {
@@ -32,7 +32,7 @@ namespace TodoApp
                 }
             }
             sr.Close();
-           srtest.Close();
+            srtest.Close();
         }
 
         public void PrintCheck(int check)
@@ -44,8 +44,8 @@ namespace TodoApp
                 if (i == check)
                 {
                     string rep = lines[check];
-                    rep= rep.Replace("[]", "[X]");
-                    Console.WriteLine(rep );
+                    rep = rep.Replace("[]", "[X]");
+
                     sw.WriteLine(rep);
                 }
                 else
