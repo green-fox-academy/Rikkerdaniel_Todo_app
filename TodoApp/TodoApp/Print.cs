@@ -9,12 +9,12 @@ namespace TodoApp
 {
     public class Print
     {
-        public static string path = @"C:\Users\rikda\Desktop\asbest\greenfox\TodoApp\Rikkerdaniel_handle_Todo_app\TodoApp\TodoApp\Todo.txt.txt";
+        public static string path = @"C:\Users\rikda\Desktop\asbest\greenfox\TodoApp\Rikkerdaniel_handle_Todo_app\TodoApp\TodoApp\Todo.txt";
 
         public void PrinterAll()
         {
-            var sr = new StreamReader(path );
-            string line1 = "";
+            var sr = new StreamReader(path);
+            string line1 = string.Empty;
             int counter = 1;
             if (sr.ReadLine() == null)
             {
@@ -34,25 +34,23 @@ namespace TodoApp
 
         public void PrintCheck(int check)
         {
-            var sr = new StreamReader(path);
-            string line1 = "";
-            int nthCheck = 0;
-            while ((line1 = sr.ReadLine()) != null)
+            string[] lines = File.ReadAllLines(path);
+            var sw = new StreamWriter(path);
+            for (int i = 0; i < lines.Length; i++)
             {
-
-                if (nthCheck == check)
+                if (i == check)
                 {
-                    Console.WriteLine("[X] " + line1);
+                    string rep = lines[check];
+                    rep.Replace("[]", "[X]");
+                    sw.WriteLine(rep);
                 }
                 else
                 {
-                    Console.WriteLine("[ ] " + line1);
-
+                    sw.WriteLine(lines[i]);
                 }
-                nthCheck++;
-
             }
-            sr.Close();
+            sw.Close();
         }
     }
 }
+

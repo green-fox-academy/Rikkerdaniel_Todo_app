@@ -9,11 +9,11 @@ namespace TodoApp
 {
     public class Remove
     {
-        public static string path = @"C:\Users\rikda\Desktop\asbest\greenfox\TodoApp\Rikkerdaniel_handle_Todo_app\TodoApp\TodoApp\Todo.txt.txt";
+        public static string path = @"C:\Users\rikda\Desktop\asbest\greenfox\TodoApp\Rikkerdaniel_handle_Todo_app\TodoApp\TodoApp\Todo.txt";
         public void RemoveTask(int task)
         {
             string[] lines = File.ReadAllLines(path);
-           var  sw = new StreamWriter(path);
+            var  sw = new StreamWriter(path);
             for (int i = 0; i < task - 1; i++)
             {
                 sw.WriteLine(lines[i]);

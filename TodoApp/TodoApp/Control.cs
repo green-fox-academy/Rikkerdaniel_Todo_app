@@ -20,14 +20,11 @@ namespace TodoApp
             if (argument == "-l")
             {
                 var pr = new Print();
-
                 pr.PrinterAll();
-
-
             }
             else if (argument == "-a")
             {
-                var wrtFile = new AddTask ();
+                var wrtFile = new AddTask();
                 Console.WriteLine("give me that new task ");
                 string newTask = Console.ReadLine();
                 wrtFile.AddNewTask(newTask);
@@ -35,7 +32,7 @@ namespace TodoApp
             }
             else if (argument == "-r")
             {
-                var rm = new Remove ();
+                var rm = new Remove();
                 Console.WriteLine("wich argument do you want to remove?");
                 int removeThis = int.Parse(Console.ReadLine());
                 rm.RemoveTask(removeThis);
