@@ -9,22 +9,31 @@ namespace TodoApp
 {
     public class Print
     {
+        public static string path = @"C:\Users\rikda\Desktop\asbest\greenfox\TodoApp\Rikkerdaniel_handle_Todo_app\TodoApp\TodoApp\Todo.txt.txt";
+
         public void PrinterAll()
         {
-            var sr = new StreamReader(@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\ReverseLines\rev.txt");
+            var sr = new StreamReader(path );
             string line1 = "";
             int counter = 1;
-            while ((line1 = sr.ReadLine()) != null)
+            if (sr.ReadLine() == null)
             {
-                Console.WriteLine(counter + "  " + line1);
-                counter++;
+                Console.WriteLine("\n YOUR LIST IS EMPTY !!  \n");
+            }
+            else
+            {
+                while ((line1 = sr.ReadLine()) != null)
+                {
+                    Console.WriteLine(counter + "  " + line1);
+                    counter++;
+                }
             }
             sr.Close();
-
         }
+
         public void PrintCheck(int check)
         {
-            var sr = new StreamReader(@"C:\Users\rikda\Desktop\asbest\greenfox\Rikkerdaniel\week-03\day-01\ReverseLines\rev.txt");
+            var sr = new StreamReader(path);
             string line1 = "";
             int nthCheck = 0;
             while ((line1 = sr.ReadLine()) != null)
