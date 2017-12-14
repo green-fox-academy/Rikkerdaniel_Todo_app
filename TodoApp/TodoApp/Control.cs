@@ -19,6 +19,8 @@ namespace TodoApp
 
             if (argument == "-l")
             {
+                Console.WriteLine();
+                Console.WriteLine();
                 var pr = new Print();
                 pr.PrinterAll();
             }
@@ -27,8 +29,14 @@ namespace TodoApp
                 var wrtFile = new AddTask();
                 Console.WriteLine("give me that new task ");
                 string newTask = Console.ReadLine();
-                wrtFile.AddNewTask(newTask);
-
+                if (newTask.Length < 1)
+                {
+                    Console.WriteLine("not real Task");
+                }
+                else
+                {
+                    wrtFile.AddNewTask(newTask);
+                }
             }
             else if (argument == "-r")
             {
